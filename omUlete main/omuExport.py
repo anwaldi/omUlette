@@ -50,31 +50,31 @@ class export_egg(Operator, ExportHelper):
     imageDir: StringProperty(
         default="images/",
         description="The path to this model's textures relative\nto the config file's model path"
-    )
+    ) # type: ignore
 
     all_or_selected: BoolProperty(
         name="Selected Only (and children)",
         description="If this is set to true, then only the objects currently selected and their children will be exported.",
         default=False,
-    )
+    ) # type: ignore
     
     skip_UUV: BoolProperty(#skip unneeded UVs
         name="Skip UVs for meshes with no texture",
         description="If this is set to true, then uvs will not be exported unless the relevant mesh has a texture applied. \nIn egg files, a vert cannot use two uv coords at once, so we generate multiple vertecies corisponding to each uv coordinate.",
         default=True,
-    )
+    ) # type: ignore
 
     expt_animations: BoolProperty(
         name="Armatures and Animations",
         description="If this is set to true, then the armature will be exported. (animation export is not yet implemented.)\nthis will be ignored if no armatures are detected in the selected objects.",
         default=False,
-    )
+    ) # type: ignore
     
     collapse_nodes: BoolProperty(
         name="Collapse Character Nodes",
         description="If this is set to true, node structure of aniamted characters will be flattened.",
         default=True,
-    )
+    ) # type: ignore
     
     
     def invoke(self, context, event):#Generate list of Actions so user can select what gets exported and how

@@ -230,15 +230,18 @@ def childProcess(objects, known_objects, known_names, texture_path, using_anim, 
                         mat = thisMesh.materials[i]
                         img_name = None
                         tex_name = None
-                        for x in mat.node_tree.nodes:
-                            if x.bl_static_type=='TEX_IMAGE':##THIS IS APPARENTLY DEPRICATED; and for some f*****g reason the only alternative I can find is as well. good luck, future me!
-                                img_name = x.image.name
-                                tex_name = img_name.replace(' ', '_')
-                                useTex = True
-                                mats.append(tex_name)
-                                egg_string += "\n<Texture> " + tex_name + " { " + texture_path + img_name + " }"
-                                #TODO:: add alpha support
-                                break
+                        tree = mat.node_tree
+                        if not tree is None:
+                            for x in tree.nodes:
+                                if x.bl_static_type=='TEX_IMAGE':##THIS IS APPARENTLY DEPRICATED; and for some f*****g reason the only alternative I can find is as well. good luck, future me!
+                                    img_name = x.image.name
+                                    tex_name = img_name.replace(' ', '_')
+                                    useTex = True
+                                    mats.append(tex_name)
+                                    egg_string += "\n<Texture> " + tex_name + " { " + texture_path + img_name + " }"
+                                    #TODO:: add alpha support
+                                    break
+                        del tree
 
                     egg_string += newliner
 
