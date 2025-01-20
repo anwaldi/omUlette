@@ -49,4 +49,4 @@ In fact, all you have to do to ensure that animation is in-fact getting exported
 ### My textures won't load after exporting!
 - Is your image directory underneath your model directory as defined in your config file?
 - If that doesn't work, try appending the file extension to the texture's name in blender.
-- If you're still having issues, please contact me through here or the panda3d discord.
+- If you're still having issues, please contact me through here or the panda3d discord
