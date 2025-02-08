@@ -33,7 +33,7 @@ blender_version_min = "4.2.0"
 #The above comments are my (Jackson Sutherland) own and do not represent the statements of the Blender foundation in any way.
 #I am meerly expressing free speech by grumbling while complying with the requirements set by the Blender foundation.
 license = [
-  "SPDX:GPL-3.0-only",
+  "SPDX:GPL-3.0-or-later",
 ]
 # Optional: required by some licenses.
 copyright = [
