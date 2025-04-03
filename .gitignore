@@ -1,3 +1,5 @@
+*.zip
+
 *.save
 *.save.1
 *.sublime-workspace
